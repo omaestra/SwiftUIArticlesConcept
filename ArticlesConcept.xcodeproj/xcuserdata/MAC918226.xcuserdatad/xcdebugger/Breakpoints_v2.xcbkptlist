@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "8A15F063-48D9-4070-A946-C09991E55BBF"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "1ED3DA71-92A4-47D4-BCC6-8FC004210363"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ArticlesConcept/ArticlesListPresentationAdapter.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "21"
+            endingLineNumber = "21"
+            landmarkName = "load()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "1ED3DA71-92A4-47D4-BCC6-8FC004210363 - 8615b385234237e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for ArticlesConcept.ArticlesListPresentationAdapter.load() async -&gt; ()"
+                  moduleName = "ArticlesConcept"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/MAC918226/Workspace/ArticlesConcept/ArticlesConcept/ArticlesListPresentationAdapter.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "21"
+                  endingLineNumber = "21"
+                  offsetFromSymbolStart = "216">
+               </Location>
+               <Location
+                  uuid = "1ED3DA71-92A4-47D4-BCC6-8FC004210363 - 8615b385234237e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for ArticlesConcept.ArticlesListPresentationAdapter.load() async -&gt; ()"
+                  moduleName = "ArticlesConcept"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/MAC918226/Workspace/ArticlesConcept/ArticlesConcept/ArticlesListPresentationAdapter.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "21"
+                  endingLineNumber = "21"
+                  offsetFromSymbolStart = "424">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
