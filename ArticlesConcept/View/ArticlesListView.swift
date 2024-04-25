@@ -35,6 +35,12 @@ struct ArticlesListView: View {
                 }
             }
         }
+        .toolbar {
+            Button("Cancel") {
+                onCancel?()
+            }
+            .disabled(!viewModel.isLoading)
+        }
         .task {
             await onRefresh?()
         }

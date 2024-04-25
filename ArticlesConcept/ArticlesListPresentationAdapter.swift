@@ -12,21 +12,33 @@ final class ArticlesListPresentationAdapter {
     private let loader: ArticlesLoader
     var viewModel: ArticlesListViewModel?
     
+    private var task: Task<Void, Never>?
+    
     init(loader: ArticlesLoader, viewModel: ArticlesListViewModel? = nil) {
         self.loader = loader
         self.viewModel = viewModel
     }
     
     func load() async {
-        guard let viewModel, !viewModel.isLoading else { return }
-        
-        do {
-            viewModel.didStartLoading()
-            let articles = try await loader.load()
-            self.viewModel?.didFinishLoading(with: map(articles))
-        } catch {
-            viewModel.didFinishLoading(with: error)
+        task = Task {
+            guard let viewModel, !viewModel.isLoading else { return }
+            
+            do {
+                viewModel.didStartLoading()
+                let articles = try await loader.load()
+                viewModel.didFinishLoading(with: map(articles))
+            } catch is CancellationError {
+                viewModel.didCancel()
+            } catch {
+                viewModel.didFinishLoading(with: error)
+            }
         }
+        
+        await task?.value
+    }
+    
+    func cancel() {
+        task?.cancel()
     }
     
     private func map(_ articles: [Article]) -> [ArticleViewModel] {

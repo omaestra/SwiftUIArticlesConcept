@@ -12,6 +12,7 @@ struct ArticleViewModel: Hashable {
     var post: String
 }
 
+@MainActor
 public final class ArticlesListViewModel: ObservableObject {
     @Published private(set) var isLoading = false
     @Published private(set) var articles: [ArticleViewModel] = []
@@ -28,6 +29,10 @@ public final class ArticlesListViewModel: ObservableObject {
         isLoading = true
     }
     
+    func didCancel() {
+        isLoading = false
+    }
+    
     func didFinishLoading(with articles: [ArticleViewModel]) {
         print("Finish loading with articles...")
         self.isLoading = false
@@ -35,7 +40,7 @@ public final class ArticlesListViewModel: ObservableObject {
     }
     
     func didFinishLoading(with error: Error) {
-        print("Finish loading with error...")
+        print("Finish loading with error: <\(error)>")
         self.isLoading = false
         self.error = error
     }

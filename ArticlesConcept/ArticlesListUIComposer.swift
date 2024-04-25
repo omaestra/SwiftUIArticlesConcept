@@ -18,6 +18,7 @@ final class ArticlesListUIComposer {
         view.onSelection = { article in
             print("selected \(article)")
         }
+        view.onCancel = presentationAdapter.cancel
         
         return view
     }
