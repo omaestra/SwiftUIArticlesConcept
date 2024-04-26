@@ -21,6 +21,7 @@
 		7CB7C02D2BD9166D0068CAC8 /* ArticlesListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CB7C02C2BD9166D0068CAC8 /* ArticlesListViewModelTests.swift */; };
 		7CB7C0302BDA3D1C0068CAC8 /* ArticlesListLoadViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CB7C02F2BDA3D1C0068CAC8 /* ArticlesListLoadViewModel.swift */; };
 		7CB7C0322BDA53EC0068CAC8 /* ArticlesListPresentationAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CB7C0312BDA53EC0068CAC8 /* ArticlesListPresentationAdapter.swift */; };
+		7CB7C0342BDB6F240068CAC8 /* ArticlesListPresentationAdapterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CB7C0332BDB6F240068CAC8 /* ArticlesListPresentationAdapterTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		7CB7C02E2BDA3B7E0068CAC8 /* ArticlesConcept.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = ArticlesConcept.xctestplan; sourceTree = "<group>"; };
 		7CB7C02F2BDA3D1C0068CAC8 /* ArticlesListLoadViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesListLoadViewModel.swift; sourceTree = "<group>"; };
 		7CB7C0312BDA53EC0068CAC8 /* ArticlesListPresentationAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesListPresentationAdapter.swift; sourceTree = "<group>"; };
+		7CB7C0332BDB6F240068CAC8 /* ArticlesListPresentationAdapterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesListPresentationAdapterTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +138,7 @@
 			children = (
 				7CB7C02A2BD7E9630068CAC8 /* ArticlesListUIIntegrationTests.swift */,
 				7CB7C02C2BD9166D0068CAC8 /* ArticlesListViewModelTests.swift */,
+				7CB7C0332BDB6F240068CAC8 /* ArticlesListPresentationAdapterTests.swift */,
 			);
 			path = ArticlesConceptTests;
 			sourceTree = "<group>";
@@ -329,6 +332,7 @@
 			files = (
 				7CB7C02D2BD9166D0068CAC8 /* ArticlesListViewModelTests.swift in Sources */,
 				7CB7C02B2BD7E9630068CAC8 /* ArticlesListUIIntegrationTests.swift in Sources */,
+				7CB7C0342BDB6F240068CAC8 /* ArticlesListPresentationAdapterTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
