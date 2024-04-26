@@ -7,7 +7,6 @@
 
 import Foundation
 
-@MainActor
 final class ArticlesListUIComposer {
     static func composedWith(loader: ArticlesLoader) -> ArticlesListView {
         let viewModel = ArticlesListViewModel()
