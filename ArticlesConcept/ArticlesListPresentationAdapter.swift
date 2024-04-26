@@ -7,7 +7,6 @@
 
 import Foundation
 
-@MainActor
 final class ArticlesListPresentationAdapter {
     private let loader: ArticlesLoader
     var viewModel: ArticlesListViewModel?
@@ -20,9 +19,9 @@ final class ArticlesListPresentationAdapter {
     }
     
     func load() async {
-        task = Task {
-            guard let viewModel, !viewModel.isLoading else { return }
-            
+        guard let viewModel, !viewModel.isLoading else { return }
+        
+        task = Task { @MainActor in
             do {
                 viewModel.didStartLoading()
                 let articles = try await loader.load()

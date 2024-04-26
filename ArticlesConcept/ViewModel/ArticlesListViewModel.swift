@@ -12,7 +12,6 @@ struct ArticleViewModel: Hashable {
     var post: String
 }
 
-@MainActor
 public final class ArticlesListViewModel: ObservableObject {
     @Published private(set) var isLoading = false
     @Published private(set) var articles: [ArticleViewModel] = []
