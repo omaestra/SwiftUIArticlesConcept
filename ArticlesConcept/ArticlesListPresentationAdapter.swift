@@ -18,8 +18,9 @@ final class ArticlesListPresentationAdapter {
         self.viewModel = viewModel
     }
     
-    func load() async {
-        guard let viewModel, !viewModel.isLoading else { return }
+    @discardableResult
+    func load() async -> Task<Void, Never>? {
+        guard let viewModel, !viewModel.isLoading else { return nil }
         
         task = Task { @MainActor in
             do {
@@ -33,7 +34,7 @@ final class ArticlesListPresentationAdapter {
             }
         }
         
-        await task?.value
+        return task
     }
     
     func cancel() {

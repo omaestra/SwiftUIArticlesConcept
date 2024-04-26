@@ -72,6 +72,16 @@ final class ArticlesListPresentationAdapterTests: XCTestCase {
         XCTAssertEqual(loadingRequests, [false, true, false])
     }
     
+    func test_cancel_cancelsOnGoingTask() async throws {
+        let (sut, _) = makeSUT()
+        
+        await sut.load().publisher.dropFirst().sink { task in
+            XCTAssertEqual(sut.viewModel?.isLoading, true)
+            sut.cancel()
+            XCTAssertEqual(task.isCancelled, true)
+        }.store(in: &cancellables)
+    }
+    
     // MARK: Helpers
     
     private func makeSUT() -> (sut: ArticlesListPresentationAdapter, loader: ArticlesLoaderStub) {

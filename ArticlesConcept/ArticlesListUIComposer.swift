@@ -13,7 +13,7 @@ final class ArticlesListUIComposer {
         let presentationAdapter = ArticlesListPresentationAdapter(loader: loader, viewModel: viewModel)
         
         var view = ArticlesListView(viewModel: viewModel)
-        view.onRefresh = presentationAdapter.load
+        view.onRefresh = { await presentationAdapter.load()?.value } 
         view.onCancel = presentationAdapter.cancel
         
         return view
