@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ArticlesListView: View {
     @ObservedObject var viewModel: ArticlesListViewModel
+    @State private var viewDidLoad = false
     
     init(viewModel: ArticlesListViewModel) {
         self.viewModel = viewModel
@@ -40,7 +41,10 @@ struct ArticlesListView: View {
             .disabled(!viewModel.isLoading)
         }
         .task {
-            await onRefresh?()
+            if !viewDidLoad {
+                await onRefresh?()
+                viewDidLoad = true
+            }
         }
         .refreshable {
             await onRefresh?()
