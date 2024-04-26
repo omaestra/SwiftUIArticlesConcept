@@ -18,12 +18,6 @@ public final class ArticlesListViewModel: ObservableObject {
     @Published private(set) var articles: [ArticleViewModel] = []
     @Published private(set) var error: Error?
     
-    init(isLoading: Bool = false, articles: [ArticleViewModel] = [], error: Error? = nil) {
-        self.isLoading = isLoading
-        self.articles = articles
-        self.error = error
-    }
-    
     func didStartLoading() {
         print("Start loading...")
         isLoading = true
