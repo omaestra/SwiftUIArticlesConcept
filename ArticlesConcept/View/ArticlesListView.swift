@@ -16,7 +16,6 @@ struct ArticlesListView: View {
     
     var onRefresh: (() async -> Void)?
     var onCancel: (() -> Void)?
-    var onSelection: ((ArticleViewModel) -> Void)?
     
     var body: some View {
         List {
@@ -25,14 +24,13 @@ struct ArticlesListView: View {
                     .frame(maxWidth: .infinity)
             }
             ForEach(viewModel.articles, id: \.self) { item in
-                VStack(alignment: .leading) {
-                    Text(item.title)
-                    Text(item.post)
+                NavigationLink(value: item) {
+                    VStack(alignment: .leading) {
+                        Text(item.title)
+                        Text(item.post)
+                    }
                 }
                 .redacted(reason: viewModel.isLoading ? [.placeholder] : [])
-                .onTapGesture {
-                    onSelection?(item)
-                }
             }
         }
         .toolbar {

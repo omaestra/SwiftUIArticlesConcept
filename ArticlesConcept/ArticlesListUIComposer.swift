@@ -15,9 +15,6 @@ final class ArticlesListUIComposer {
         
         var view = ArticlesListView(viewModel: viewModel)
         view.onRefresh = presentationAdapter.load
-        view.onSelection = { article in
-            print("selected \(article)")
-        }
         view.onCancel = presentationAdapter.cancel
         
         return view

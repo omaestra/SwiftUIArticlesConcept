@@ -9,10 +9,15 @@ import SwiftUI
 
 @main
 struct ArticlesConceptApp: App {
+    @State var path = NavigationPath()
+    
     var body: some Scene {
         WindowGroup {
-            NavigationStack {
+            NavigationStack(path: $path) {
                 ArticlesListUIComposer.composedWith(loader: makeArticlesLoader())
+                    .navigationDestination(for: ArticleViewModel.self) { value in
+                        Text("This is an Article,\nTitle: \(value.title)\nPost: \(value.post)")
+                    }
             }
         }
     }
