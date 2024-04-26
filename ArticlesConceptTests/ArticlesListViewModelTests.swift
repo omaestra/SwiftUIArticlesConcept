@@ -8,6 +8,7 @@
 import XCTest
 @testable import ArticlesConcept
 
+@MainActor
 final class ArticlesListViewModelTests: XCTestCase {
     func test_init_doesNotStartsLoading() throws {
         let sut = ArticlesListViewModel()
@@ -48,6 +49,16 @@ final class ArticlesListViewModelTests: XCTestCase {
         sut.didFinishLoading(with: error)
         XCTAssertFalse(sut.isLoading)
         XCTAssertEqual(sut.error as? NSError, error)
+    }
+    
+    func test_didCancel_setsIsLoadingToFalse() throws {
+        let sut = ArticlesListViewModel()
+        
+        sut.didStartLoading()
+        XCTAssertTrue(sut.isLoading)
+        
+        sut.didCancel()
+        XCTAssertFalse(sut.isLoading)
     }
 }
 
