@@ -28,13 +28,13 @@ public final class ArticlesListViewModel: ObservableObject {
     
     func didFinishLoading(with articles: [ArticleViewModel]) {
         print("Finish loading with articles...")
-        self.isLoading = false
         self.articles = articles
+        self.isLoading = false
     }
     
     func didFinishLoading(with error: Error) {
         print("Finish loading with error: <\(error)>")
-        self.isLoading = false
         self.error = error
+        self.isLoading = false
     }
 }
